@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Synetec.CityInfo.Api.Dtos;
 using Synetec.CityInfo.Core.Exceptions;
@@ -9,6 +10,7 @@ using Synetec.CityInfo.DataAccess.Entities;
 namespace Synetec.CityInfo.Api.Controllers
 {
     [Route("api/[controller]")]
+    [AllowAnonymous]
     public class CitiesController : Controller
     {
         private readonly ICityInfoService _cityInfoService;

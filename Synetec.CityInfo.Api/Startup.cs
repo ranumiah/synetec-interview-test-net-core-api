@@ -34,6 +34,10 @@ namespace Synetec.CityInfo.Api
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
             app.UseMvc();
         }
     }
