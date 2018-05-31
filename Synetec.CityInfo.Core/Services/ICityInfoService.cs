@@ -7,5 +7,6 @@ namespace Synetec.CityInfo.Core.Services
     {
         IEnumerable<City> GetCities();
         City GetCity(int cityId);
+        void DeleteCity(int cityId);
     }
 }

@@ -28,5 +28,15 @@ namespace Synetec.CityInfo.Core.Services
 
             return city;
         }
+
+        public void DeleteCity(int cityId)
+        {
+            var cityToDelete = _cityRepository.GetById(cityId);
+
+            if (cityToDelete == null)
+                throw new CityNotFoundException($"City with {cityId} does not exist");
+
+            _cityRepository.Delete(cityToDelete);
+        }
     }
 }

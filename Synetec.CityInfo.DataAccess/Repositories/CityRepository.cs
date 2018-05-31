@@ -16,5 +16,10 @@ namespace Synetec.CityInfo.DataAccess.Repositories
         {
             return CityInfoContext.Cities.FirstOrDefault(x => x.Id == cityId);
         }
+
+        public void Delete(City cityToDelete)
+        {
+            CityInfoContext.Cities.ToList().Remove(cityToDelete);
+        }
     }
 }
