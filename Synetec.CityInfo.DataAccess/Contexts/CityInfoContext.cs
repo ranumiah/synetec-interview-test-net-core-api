@@ -5,7 +5,7 @@ namespace Synetec.CityInfo.DataAccess.Contexts
 {
     public static class CityInfoContext
     {
-        public static IEnumerable<City> Cities { get; set; } = new List<City>()
+        public static IList<City> Cities { get; set; } = new List<City>()
             {
                 new City()
                 {
