@@ -7,6 +7,6 @@ namespace Synetec.CityInfo.DataAccess.Repositories
     {
         IEnumerable<City> GetAll();
         City GetById(int cityId);
-        void Delete(City cityToDelte);
+        void Delete(City cityToDelete);
     }
 }

@@ -53,6 +53,25 @@ namespace Synetec.CityInfo.Api.Controllers
             }
         }
 
+        [HttpDelete("delete-city/{cityId:int}")]
+        public IActionResult DeleteCity(int cityId)
+        {
+            try
+            {
+                _cityInfoService.DeleteCity(cityId);
+                
+                return Ok();
+            }
+            catch (CityNotFoundException e)
+            {
+                return BadRequest(e.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
         private static CityDto MapCity(City city)
         {
             return new CityDto
